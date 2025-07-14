@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      .hero {
+        padding: 50px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 200px;
+        height: 200px;
+        background: url("path_to_abstract_shape.png") no-repeat;
+        background-size: contain;
+        opacity: 0.5;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .funnel-image img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          text-align: center;
+        }
+
+        .funnel-image {
+          margin-top: 2rem;
+        }
+      }
+
+      .services-section {
+        background-color: var(--eerie-black);
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .services-section .section-title {
+        color: var(--logo-pink-light);
+        font-size: 5rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .services-section .section-subtitle {
+        color: var(--lavender-web);
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+
+      .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .service-card {
+        background: var(--logo-pink-dark);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+        width: 100%;
+        margin: 0 auto;
+        /* Center the card horizontally */
+      }
+
+      .service-icon {
+        font-size: 3.5rem;
+        color: var(--dream);
+        margin-bottom: 20px;
+      }
+
+      .service-card h3 {
+        color: var(--lavender-web);
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .service-card p {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+      }
+
+      .service-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+      }
+
+      .service-card ul li {
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        background: white;
+      }
+
+      .service-card:hover .service-icon {
+        color: #00c897;
+      }
+
+      .service-card:hover h3 {
+        color: var(--eerie-black);
+      }
+
+      .service-card:hover p,
+      .service-card:hover ul li {
+        color: var(--eerie-black);
+      }
+
+      .hero-responsive {
+        margin-top: 30%;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          text-align: center;
+          padding: 30px 0;
+        }
+
+        .contact-text{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+        .hero-responsive {
+          margin-top: 100%;
+        }
+
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-description {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .funnel-image {
+          margin-top: 20px;
+        }
+
+        .services-section .section-title {
+          font-size: 3rem;
+        }
+
+        .services-section .section-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .service-card h3 {
+          font-size: 1.8rem;
+        }
+
+        .service-card p {
+          font-size: 1rem;
+        }
+
+        .service-icon {
+          font-size: 3rem;
+        }
+
+        .testimonials .section-title {
+          font-size: 2.5rem;
+        }
+
+        .testimonial-item {
+          max-width: 100%;
+          margin: 0 auto 30px;
+        }
+
+        .testimonial-item img {
+          max-width: 80px;
+        }
+
+        .testimonial-content p {
+          font-size: 0.9rem;
+        }
+
+        .testimonial-content h4 {
+          font-size: 1rem;
+        }
+
+        .testimonial-content span {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg" style="width: 100%">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="images/NexForm Logo.png"
+              alt=""
+              width="180"
+              height="150px"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            style="background-color: #e154d7; right: 0"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="index.html"
+                  style="color: #00c897"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="services.html"
+                  id="servicesDropdown"
+                  role="button"
+                >
+                  Services
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="portfolio.html">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html">Contact Us</a>
+              </li>
+            </ul>
+            <div class="d-flex ms-3">
+              <a href="contactus.html" class="btn btn-primary custom-btn"
+                >Get Free Audit</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main style="background-color: #0c1c69">
+      <section
+        id="services-details"
+        style="padding-top: 250px"
+        class="services-section"
+      >
+        <div class="container">
+          <h2 class="section-title animate-fade-up">
+            We Build Brands That Convert—Not Just Look Good.
+          </h2>
+          <p class="section-subtitle">
+            From strategy to execution, we create marketing systems that
+            attract, convert, and retain your best customers.
+          </p>
+
+          <div class="services-grid">
+            <div class="service-card animate-left">
+              <div class="service-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Brand Identity Development</h3>
+              <p>
+                A logo is not a brand. We help you craft a bold identity
+                system—from logo to brand voice—that communicates trust and
+                positions you as a market leader in your industry. Whether
+                you're in real estate or ecommerce, our design philosophy is
+                built to 10X perception and profit.
+              </p>
+              <a href="https://wa.me/+2349038249400?text=Hello%2C%20I'm%20interested%20in%20your%20Brand%20Identity%20Development%20service.%0A%0AMy%20name%20is%20%5BYour%20Name%5D%2C%20and%20I%20run%20%5BYour%20Business%2FCompany%20Name%5D.%20I'd%20love%20help%20building%20a%20brand%20that%20stands%20out.%0A%0AHere%E2%80%99s%20a%20quick%20summary%20of%20what%20I%20need%3A%0A%5BBriefly%20describe%20your%20brand%20goals%20or%20challenges%5D.%0A%0ALooking%20forward%20to%20hearing%20from%20you%21
+" class="btn btn-service" target="_blank"
+                  >Let's Rebrand You For Success <i class="fas fa-arrow-right"></i
+                ></a>
+            </div>
+
+            <div class="service-card animate-right">
+              <div class="service-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h3>Social Media Management</h3>
+              <p>
+                We turn your social media from “just posting” to real engagement
+                and conversion. From content calendars to caption writing and
+                follower engagement—our team manages everything so you show up
+                consistently, stay relevant, and grow fast.
+              </p>
+              <a href="https://wa.me/+2349038249400?text=Hello%2C%20I%E2%80%99m%20reaching%20out%20about%20your%20Social%20Media%20Management%20service.%0A%0AMy%20name%20is%20%5BYour%20Name%5D%2C%20and%20I%20manage%20%5BYour%20Brand%2FCompany%20Name%5D.%20I%E2%80%99d%20love%20support%20with%20growing%20our%20social%20presence.%0A%0AHere%E2%80%99s%20what%20I%20need%20help%20with%3A%0A%5BBriefly%20describe%20your%20current%20challenges%20or%20goals%5D.%0A%0AExcited%20to%20hear%20from%20you%20soon%21
+" class="btn btn-service" target="_blank"
+                  >Make My Socials Work For Me <i class="fas fa-arrow-right"></i
+                ></a>
+            </div>
+
+            <div class="service-card animate-left">
+              <div class="service-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3>Email Marketing</h3>
+              <p>
+                We set up automated email sequences that welcome, nurture, and convert your audience into paying customers. No spam. No fluff. Just strategic campaigns that drive clicks, replies, and purchases.
+              </p>
+              <a href="https://wa.me/+2349038249400?text=Hi%20there%21%20I'm%20interested%20in%20your%20Email%20Marketing%20service.%0A%0AMy%20name%20is%20%5BYour%20Name%5D%2C%20and%20I%20own%20%5BYour%20Business%2FCompany%20Name%5D.%20I%E2%80%99m%20looking%20for%20help%20converting%20leads%20and%20re-engaging%20my%20audience%20through%20emails.%0A%0AHere%E2%80%99s%20what%20I%E2%80%99m%20aiming%20to%20achieve%3A%0A%5BBrief%20description%20of%20your%20email%20goals%20or%20issues%5D.%0A%0AThanks%20in%20advance%21
+" class="btn btn-service" target="_blank"
+                  >Let's Automate Your Sales <i class="fas fa-arrow-right"></i
+                ></a>
+            </div>
+
+            <div class="service-card animate-right">
+              <div class="service-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Marketing Strategy & Consulting</h3>
+              <p>
+                Random marketing is expensive. We work with you to create a strategy aligned with your business goals—clear steps, clear timelines, and measurable outcomes. You’ll finally know what’s working and why.
+              </p>
+              <a href="https://wa.me/+2349038249400?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Marketing%20Strategy%20%26%20Consulting%20service.%0A%0AI%E2%80%99m%20%5BYour%20Name%5D%20from%20%5BYour%20Business%2FCompany%20Name%5D.%20I%E2%80%99d%20love%20help%20creating%20a%20clear%20marketing%20roadmap%20for%20growth.%0A%0AOur%20current%20challenge%20is%3A%0A%5BBriefly%20describe%20your%20situation%20or%20goals%5D.%0A%0ALet%E2%80%99s%20talk%21
+" class="btn btn-service" target="_blank"
+                  >Let's Build Your Winning Strategy <i class="fas fa-arrow-right"></i
+                ></a>
+            </div>
+            <div class="service-card animate-right">
+              <div class="service-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Paid Ad Creatives & Copy</h3>
+              <p>
+                We design scroll-stopping creatives and write thumb-stopping copy that grabs attention and drives traffic to your offer. Whether you're running Meta or Google ads, we optimize for performance, not just aesthetics.
+              </p>
+              <a href="https://wa.me/+2349038249400?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Paid%20Ad%20Creatives%20%26%20Copy%20service.%0A%0AI%E2%80%99m%20%5BYour%20Name%5D%20from%20%5BYour%20Business%2FCompany%20Name%5D.%20We%E2%80%99re%20looking%20to%20launch%20or%20optimize%20high-performing%20ads.%0A%0AHere%E2%80%99s%20a%20brief%20on%20our%20campaign%3A%0A%5BDescribe%20product%2C%20audience%2C%20and%20goals%5D.%0A%0AHope%20to%20work%20with%20you%20soon%21
+" class="btn btn-service" target="_blank"
+                  >Upgrade My Ad Game <i class="fas fa-arrow-right"></i
+                ></a>
+            </div>
+            <div class="service-card animate-right">
+              <div class="service-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h3>Website Development</h3>
+              <p>
+                Your website is your 24/7 salesperson. We build high-converting, mobile-optimized websites tailored to your brand that not only look amazing but are built to generate leads and sales.
+              </p>
+              <a
+                href="https://wa.me/+2349038249400?text=Hello%2C%20I%E2%80%99m%20interested%20in%20your%20Website%20Development%20service.%0A%0AMy%20name%20is%20%5BYour%20Name%5D%2C%20and%20I%20represent%20%5BYour%20Business%2FCompany%20Name%5D.%20I%E2%80%99m%20looking%20to%20create%20or%20improve%20my%20website%20to%20better%20represent%20my%20brand%20and%20attract%20more%20customers.%0A%0AHere%E2%80%99s%20a%20brief%20overview%20of%20what%20I%20need%3A%0A%5BExplain%20your%20current%20website%20challenges%20or%20what%20you%20want%20built%5D.%0A%0ALooking%20forward%20to%20your%20guidance%21"
+
+                class="btn btn-primary custom-btn" target="_blank"
+                >Let’s Build Your Revenue-Driven Website <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div class="service-card animate-right">
+              <div class="service-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h3>Sales Funnel Setup</h3>
+              <p>
+                From opt-in pages to upsell automations, we build sales funnels that capture leads, build trust, and close sales—all on autopilot. Perfect for coaches, ecommerce stores, and service providers.
+              </p>
+             <a href="https://wa.me/+2349038249400?text=Hi%2C%20I%E2%80%99m%20interested%20in%20your%20Sales%20Funnel%20Setup%20service.%0A%0AMy%20name%20is%20%5BYour%20Name%5D%2C%20and%20I%20run%20%5BYour%20Business%2FCompany%20Name%5D.%20I%E2%80%99m%20looking%20to%20automate%20and%20optimize%20our%20lead-to-customer%20journey.%0A%0AWhat%20we%20currently%20have%20and%20need%3A%0A%5BBriefly%20explain%20your%20funnel%20or%20tools%20you%E2%80%99re%20using%5D.%0A%0AThanks%21
+" class="btn btn-service" target="_blank"
+                  >Let's Build Your Funnel <i class="fas fa-arrow-right"></i
+                ></a>
+            </div>
+
+            <div class="service-card animate-right">
+              <div class="service-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h3> Content Creation & Management</h3>
+              <p>
+                We plan, create, and manage scroll-stopping visuals, videos, carousels, and stories that reflect your brand voice. It’s more than just aesthetics—it’s content that builds trust and drives action.
+              </p>
+              <a href="https://wa.me/+2349038249400?text=Hi%2C%20I%E2%80%99m%20interested%20in%20your%20Content%20Creation%20%26%20Management%20service.%0A%0AI%E2%80%99m%20%5BYour%20Name%5D%2C%20and%20I%20run%20%5BYour%20Business%2FCompany%20Name%5D.%20I%20want%20to%20build%20consistent%2C%20high-quality%20content%20that%20matches%20our%20voice.%0A%0AWhat%20we%20currently%20need%20is%3A%0A%5BExplain%20the%20type%20of%20content%20and%20goals%5D.%0A%0AAppreciate%20your%20time%21
+" class="btn btn-service" target="_blank"
+                  >Get Powerful Content Weekly <i class="fas fa-arrow-right"></i
+                ></a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial Section -->
+      <section class="testimonials">
+        <div class="container">
+          <h2 class="section-title">Testimonials</h2>
+          <div
+            id="testimonials-slider"
+            class="carousel slide"
+            data-bs-ride="carousel"
+            data-bs-interval="5000"
+          >
+            <div class="carousel-inner">
+              <!-- Testimonial 1 & 2 -->
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-between">
+                  <div class="testimonial-item">
+                    <img src="images/customerLogo1.jpg" alt="Testimonial 1" />
+                    <div class="testimonial-content">
+                      <p>
+                        "Working with this team has been a game-changer for our
+                        business. Their expertise and dedication are unmatched!"
+                      </p>
+                      <h4>John Doe</h4>
+                      <span>CEO, Company XYZ</span>
+                    </div>
+                  </div>
+                  <div class="testimonial-item">
+                    <img src="images/customerLogo2.jpg" alt="Testimonial 2" />
+                    <div class="testimonial-content">
+                      <p>
+                        "The results we've achieved together are outstanding. I
+                        highly recommend their services to anyone."
+                      </p>
+                      <h4>Jane Smith</h4>
+                      <span>Founder, Startup ABC</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Testimonial 3 & 4 (Add more as needed) -->
+              <div class="carousel-item">
+                <div class="d-flex justify-content-between">
+                  <div class="testimonial-item">
+                    <img src="images/customerLogo2.jpg" alt="Testimonial 3" />
+                    <div class="testimonial-content">
+                      <p>
+                        "A fantastic experience from start to finish. The team
+                        exceeded all of our expectations."
+                      </p>
+                      <h4>Emily Johnson</h4>
+                      <span>Marketing Director, Lifestyle Co.</span>
+                    </div>
+                  </div>
+                  <div class="testimonial-item">
+                    <img src="images/customerLogo1.jpg" alt="Testimonial 4" />
+                    <div class="testimonial-content">
+                      <p>
+                        "Exceptional service and incredible results. We couldn't
+                        have asked for a better partnership."
+                      </p>
+                      <h4>Michael Brown</h4>
+                      <span>COO, Fintech Ltd.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#testimonials-slider"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#testimonials-slider"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#testimonials-slider"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#testimonials-slider"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-us">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 contact-text animate-fade-up">
+              <h2>Ready to Start Seeing Real Results?</h2>
+              <p>
+                We’ve helped brands across construction, real estate, automotive, and eCommerce drive massive growth. Let’s talk about what’s possible for you.
+              </p>
+              <button class="btn custom-btn">Connect With Us Now!</button>
+            </div>
+            <div class="col-md-6 contact-image animate-fade-in">
+              <img src="../images/team.jpg" alt="Team working together" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <a href="#" class="footer-logo">
+              <!-- <img src="../images/logo.png" alt="Digital Agency Logo"> -->
+              <span>Nexform<br />Marketing Agency</span>
+            </a>
+            <p class="footer-description">
+              NexForm is a performance-driven agency built for brands that want to grow smarter, faster, and with clarity. From strategy to execution, we’re your partner in building long-term digital success.
+            </p>
+            <div class="social-icons">
+              <a href="https://calendly.com/saadalii/free-business-audit"
+                ><i class="fa fa-calendar"></i
+              ></a>
+              <a href="https://www.instagram.com/nexform_agency/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/NexForm17?t=uc9ODLjTicRZYOsjrCwTaQ&s=09"
+                ><i class="fab fa-x"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h3>Company</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contactus.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Business</h3>
+            <ul class="footer-links">
+              <li><a href="portfolio.html">Project</a></li>
+              <li><a href="aboutus.html">Our Team</a></li>
+              <li><a href="contactus.html">Faq's</a></li>
+              <li><a href="portfolio.html">Customers</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Get In Touch</h3>
+            <p>Rt. 66, Downtown, Washington, DC</p>
+            <p>info@example.com</p>
+            <p>1-800-1234-567</p>
+            <p>+001-987-654-3210</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2025 Nexform | Powered by Nexform Agency</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <!-- Include GSAP library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

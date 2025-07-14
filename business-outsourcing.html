@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Process Outsourcing</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #1f1e1e, var(--dream));
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle, rgba(215, 164, 230, 0.1) 10%, transparent 10%),
+                radial-gradient(circle, rgba(215, 164, 230, 0.1) 10%, transparent 10%);
+            background-position: 0 0, 50px 50px;
+            background-size: 100px 100px;
+            animation: backgroundAnimation 20s linear infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            color: #ccd0e7;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            color: rgb(215, 164, 230);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .subtitle {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ccd0e7;
+            font-weight: bold;
+        }
+
+        .hero .cta-button {
+            display: inline-block;
+            padding: 20px 40px;
+            background-color: rgb(215, 164, 230);
+            color: #1f1e1e;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .cta-button:hover {
+            background-color: #ccd0e7;
+            color: #1f1e1e;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(215, 164, 230, 0.3);
+        }
+
+        /* Service Details Section */
+        .service-details {
+            padding: 80px 0;
+            background-color: var(--lavender-web);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-details h2 {
+            color: var(--logo-pink);
+            margin-bottom: 20px;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .service-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .service-details ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .service-details ul li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--logo-pink-dark);
+            font-size: 1.5rem;
+        }
+
+        /* Service Description Section */
+        .service-description {
+            padding: 50px 0;
+            background-color: #f7f7f7;
+        }
+
+        .service-description h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1f1e1e;
+            font-weight: bold;
+        }
+
+        .service-description p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: aliceblue;
+        }
+
+
+        .service-card {
+            background: linear-gradient(45deg, var(--dream), var(--logo-pink));
+            padding: 30px;
+            border-radius: 10px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                /* Smaller heading size on mobile */
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+                /* Adjust subtitle size */
+            }
+
+            .hero .cta-button {
+                padding: 10px 25px;
+                /* Adjust button padding */
+                font-size: 1rem;
+                /* Adjust font size */
+            }
+
+            .service-details h2 {
+                font-size: 2.5rem;
+                /* Reduce heading size */
+            }
+
+            .service-description h3 {
+                font-size: 2rem;
+                /* Adjust heading size in descriptions */
+            }
+
+            .service-details ul li {
+                font-size: 1rem;
+                /* Smaller list item text */
+            }
+
+            .service-description p {
+                font-size: 1rem;
+                /* Smaller paragraph text */
+            }
+
+            .service-details,
+            .service-description {
+                padding: 50px 15px;
+                /* Add padding on smaller screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+                /* Further reduce heading size */
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+                /* Further adjust subtitle size */
+            }
+
+            .hero .cta-button {
+                padding: 8px 20px;
+                /* Adjust button padding */
+                font-size: 0.9rem;
+                /* Adjust font size */
+            }
+
+            .service-details h2 {
+                font-size: 2rem;
+                /* Further reduce heading size */
+            }
+
+            .service-description h3 {
+                font-size: 1.5rem;
+                /* Further adjust heading size */
+            }
+
+            .service-details ul li {
+                font-size: 0.9rem;
+                /* Further reduce list item text */
+            }
+
+            .service-description p {
+                font-size: 0.9rem;
+                /* Further reduce paragraph text */
+            }
+
+            .service-details,
+            .service-description {
+                padding: 40px 10px;
+                /* Add padding on smaller screens */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg" style="width: 100%;">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/MKT_Posts_OG-removebg-preview.png" alt="" width="100"
+                        class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                    style="background-color: #e154d7; right: 0;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="services.html" id="servicesDropdown"
+                                role="button">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="performance-marketing.html">Performance Marketing</a>
+                                </li>
+                                <li><a class="dropdown-item" href="business-optimisation.html">Business Optimisation</a>
+                                </li>
+                                <li><a class="dropdown-item" href="custom-software.html">Custom
+                                        Software Solutions</a>
+                                </li>
+                                <li><a class="dropdown-item" href="business-outsourcing.html"
+                                        style="color:#00C897;">Business Outsourcing</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactus.html">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex ms-3">
+                        <a href="contactus.html" class="btn btn-primary custom-btn">Get Free Audit</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="animate-fade-up">Business Process Outsourcing</h1>
+                <p class="subtitle animate-fade-up">Efficient outsourcing services to enhance your business processes
+                </p>
+                <a href="#service-details" class="cta-button animate-fade-up">Get Started</a>
+            </div>
+        </section>
+
+        <section class="service-details" id="service-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 animate-fade-right">
+                        <h2>Streamline Operations with Business Process Outsourcing</h2>
+                        <p>Why juggle it all when you can focus on what you do best? Our business process outsourcing
+                            services are like having a
+                            trusted sidekick—handling the day-to-day tasks with precision so you can soar to new
+                            heights. From customer support to
+                            data management, we've got it covered, leaving you free to shine.</p>
+                        <ul>
+                            <li>Customer Service Outsourcing</li>
+                            <li>Technical Support</li>
+                            <li>Data Entry and Processing</li>
+                            <li>HR and Payroll Solutions</li>
+                            <li>IT Support Services</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 animate-fade-left">
+                        <img src="../images/joe-done.jpg" alt="Business Outsourcing" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-description">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="service-card">
+                            <h3>Customer Service Outsourcing</h3>
+                            <p>Provide exceptional customer service without the hassle of managing it in-house. Our
+                                customer
+                                service
+                                outsourcing solutions are designed to provide a seamless customer experience, increase
+                                customer
+                                satisfaction, and reduce costs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-description">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="service-card">
+                            <h3>Technical Support</h3>
+                            <p>Get technical support services that are designed to provide timely and effective
+                                solutions to
+                                your
+                                technical issues. Our technical support team is trained to handle a wide range of
+                                technical
+                                issues,
+                                ensuring that your business operations are not disrupted.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-description">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="service-card">
+                            <h3>Data Entry and Processing</h3>
+                            <p>Accurately and efficiently manage your data with our data entry and processing services.
+                                Our
+                                team of
+                                experts is trained to handle large volumes of data, ensuring that your data is accurate,
+                                up-to-date,
+                                and secure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-description">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="service-card">
+                            <h3>HR and Payroll Solutions</h3>
+                            <p>Streamline your HR and payroll operations with our comprehensive solutions. Our HR and
+                                payroll
+                                services are designed to provide a seamless employee experience, reduce administrative
+                                burdens, and
+                                ensure compliance with regulatory requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-description">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="service-card">
+                            <h3>IT Support Services</h3>
+                            <p>Get comprehensive IT support services that are designed to provide timely and effective
+                                solutions to
+                                your IT issues. Our IT support team is trained to handle a wide range of IT issues,
+                                ensuring
+                                that
+                                your business operations are not disrupted.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Testimonials</h2>
+                <div id="testimonials-slider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="carousel-inner">
+                        <!-- Testimonial 1 & 2 -->
+                        <div class="carousel-item active">
+                            <div class="d-flex justify-content-between">
+                                <div class="testimonial-item">
+                                    <img src="images/customerLogo1.jpg" alt="Testimonial 1">
+                                    <div class="testimonial-content">
+                                        <p>"Working with this team has been a game-changer for our business. Their
+                                            expertise and
+                                            dedication
+                                            are
+                                            unmatched!"</p>
+                                        <h4>John Doe</h4>
+                                        <span>CEO, Company XYZ</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-item">
+                                    <img src="images/customerLogo2.jpg" alt="Testimonial 2">
+                                    <div class="testimonial-content">
+                                        <p>"The results we've achieved together are outstanding. I highly recommend
+                                            their
+                                            services to
+                                            anyone."
+                                        </p>
+                                        <h4>Jane Smith</h4>
+                                        <span>Founder, Startup ABC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 & 4 (Add more as needed) -->
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-between">
+                                <div class="testimonial-item">
+                                    <img src="images/customerLogo2.jpg" alt="Testimonial 3">
+                                    <div class="testimonial-content">
+                                        <p>"A fantastic experience from start to finish. The team exceeded all of our
+                                            expectations."</p>
+                                        <h4>Emily Johnson</h4>
+                                        <span>Marketing Director, Lifestyle Co.</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-item">
+                                    <img src="images/customerLogo1.jpg" alt="Testimonial 4">
+                                    <div class="testimonial-content">
+                                        <p>"Exceptional service and incredible results. We couldn't have asked for a
+                                            better
+                                            partnership."
+                                        </p>
+                                        <h4>Michael Brown</h4>
+                                        <span>COO, Fintech Ltd.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonials-slider" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonials-slider" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonials-slider"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonials-slider"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 contact-text animate-fade-up">
+                        <h2>Let Us Help You</h2>
+                        <p>We can help you bring your ideas to life. Let's talk about what we can build and raise
+                            together.</p>
+                        <button class="btn custom-btn">Connect with us!</button>
+                    </div>
+                    <div class="col-md-6 contact-image animate-fade-in">
+                        <img src="../images/team.jpg" alt="Team working together">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="#" class="footer-logo">
+                        <!-- <img src="../images/logo.png" alt="Digital Agency Logo"> -->
+                        <span>Kayi<br>Digital</span>
+                    </a>
+                    <p class="footer-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="social-icons">
+                        <a href="https://calendly.com/saadalii/free-business-audit"><i class="fa fa-calendar"></i></a>
+                        <a href="https://www.instagram.com/thekayi.digital/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61565056286873&mibextid=LQQJ4d"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/company/the-kayi-digital/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Business</h3>
+                    <ul class="footer-links">
+                        <li><a href="portfolio.html">Project</a></li>
+                        <li><a href="aboutus.html">Our Team</a></li>
+                        <li><a href="contactus.html">Faq's</a></li>
+                        <li><a href="portfolio.html">Customers</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Get In Touch</h3>
+                    <p>Rt. 66, Downtown, Washington, DC</p>
+                    <p>info@example.com</p>
+                    <p>1-800-1234-567</p>
+                    <p>+001-987-654-3210</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Kayi Digital | Powered by Kayi Digital</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <!-- Include GSAP library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
